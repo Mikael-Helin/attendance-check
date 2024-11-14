@@ -2,6 +2,7 @@
 
 To populate the database with fake data, type
 
+    cd attendance_project
     python3 populate.py
 
 then run the project by
