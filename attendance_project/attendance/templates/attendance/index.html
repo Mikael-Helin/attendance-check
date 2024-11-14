@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Check - Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'attendance/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Attendance Check</h1>
+        <p>Use the links below to navigate:</p>
+        <ul>
+            <li><a href="{% url 'check_attendance' %}">Check Attendance</a></li>
+            <li><a href="{% url 'register_user' %}">Register a New User</a></li>
+            <li><a href="{% url 'user_list' %}">View Registered Users</a></li>            
+            <li><a href="/admin/">Admin Page</a> <i>(username: <strong>mikael</strong>, password: <strong>password</strong>)</i></li>
+        </ul>
+    </div>
+</body>
+</html>

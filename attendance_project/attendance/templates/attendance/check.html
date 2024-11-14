@@ -3,17 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Registration</title>
+    <title>Attendance Check</title>
     <link rel="stylesheet" type="text/css" href="{% static 'attendance/styles.css' %}">
 </head>
 <body>
     <div class="container">
-        <h2>User Registration</h2>
+        <h2>Check Attendance</h2>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="row">
-                <button type="submit">Register</button>
+                <button type="submit">Check-in!</button>
                 <a href="{% url 'index' %}" class="button cancel">Cancel</a>
             </div>
         </form>

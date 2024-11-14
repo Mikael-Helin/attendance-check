@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Records</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'attendance/styles.css' %}">
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Attendance Records for {{ user.firstname }} {{ user.lastname }}</h2>
+        <a href="{% url 'index' %}" class="button">Home</a>
+        <br><br><br>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for attendance in attendances %}
+            <tr>
+                <td>{{ attendance.user.firstname }}</td>
+                <td>{{ attendance.user.lastname }}</td>
+                <td>{{ attendance.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
